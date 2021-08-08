@@ -5,3 +5,12 @@
   padding: 0 !important;
   box-sizing: border-box !important;
 } */
+
+img {
+  height: 300px;
+  width: 300px;
+}
+
+.card {
+  word-wrap: break-word;
+}

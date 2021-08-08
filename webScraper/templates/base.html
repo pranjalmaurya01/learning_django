@@ -8,18 +8,40 @@
     <link rel="stylesheet" href="{% static 'materialize/materialize.min.css' %}" />
     <script src="{% static 'materialize/materialize.min.js' %}" defer></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="shortcut icon" href="{% static 'assets/favicon.ico' %}" type="image/x-icon" />
     <title>craigslist</title>
   </head>
   <body>
+    {% comment %} navbar start {% endcomment %}
+
     <nav>
       <div class="container nav-wrapper">
-        <a href="/" class="brand-logo">craigslist</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">JavaScript</a></li>
-        </ul>
+        <a href="/" class="brand-logo center">craigslist</a>
       </div>
     </nav>
+    {% comment %} navbar end {% endcomment %}
+
+    <h2 style="text-align: center">Search for anything here !!</h2>
+
+    <div class="container">
+      <div class="row">
+        <form class="col s12" action="{%url 'new_search' %}" method="GET">
+          {% csrf_token %}
+          <div class="row">
+            <div class="input-field col s12 m10">
+              <input type="text" name="search" required />
+              <label for="email_inline">Search here</label>
+              {% comment %} <span class="helper-text" data-error="wrong" data-success="right">Helper text</span> {% endcomment %}
+            </div>
+            <button class="btn waves-effect waves-light col s12 m2" type="submit">
+              Submit
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    {% comment %} NEW CONTNENT {% endcomment %} {% block content %}{% endblock content %}
   </body>
 </html>
