@@ -1,11 +1,12 @@
 {% extends 'base.html' %} {% comment %} sssssssssssssssssssssssssssssssssssssssssssssssssssssssss {% endcomment %} {% block content %}
-<h2 style="text-align: center">{{ searchedData | title }}</h2>
+
+<p class="flow-text" style="text-align: center">{{ searchedData | title }}</p>
 
 <div class="container">
   {% if final_postings %}
   <div class="row">
     {% for post in final_postings %}
-    <div class="col s3">
+    <div class="col s12 m3">
       <a href="{{ post.1 }}" target="_blank">
         <div class="card">
           <div class="card-image">
@@ -25,6 +26,8 @@
   {% else %}
   <br />
   <br />
-  <h4 style="text-align: center">NO RESULTS FOUND</h4>
+
+  <p class="flow-text" style="text-align: center">NO RESULTS FOUND</p>
+
   {% endif %} {% endblock content %}
 </div>

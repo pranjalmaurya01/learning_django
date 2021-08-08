@@ -26,10 +26,9 @@
     <div class="container">
       <div class="row">
         <form class="col s12" action="{%url 'new_search' %}" method="GET">
-          {% csrf_token %}
           <div class="row">
             <div class="input-field col s12 m10">
-              <input type="text" name="search" required />
+              <input type="text" name="search" required autocomplete="off" />
               <label for="email_inline">Search here</label>
               {% comment %} <span class="helper-text" data-error="wrong" data-success="right">Helper text</span> {% endcomment %}
             </div>
